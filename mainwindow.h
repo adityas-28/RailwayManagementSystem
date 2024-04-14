@@ -2,7 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "book_a_train.h"
+#include <QtSql>
+#include <QtDebug>
+#include <QFileInfo>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -15,14 +18,15 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_enter_clicked();
+
+    void on_cancel_clicked();
 
 private:
     Ui::MainWindow *ui;
- BOOK_A_TRAIN *ptrbooktrain;
+    QSqlDatabase mydb;
 };
 #endif // MAINWINDOW_H
