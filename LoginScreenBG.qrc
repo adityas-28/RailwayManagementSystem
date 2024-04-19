@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>LoginScreen_BGImage.qrc</file>
+    </qresource>
+</RCC>

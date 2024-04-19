@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/Aditya Singh/Documents/RailwayManagementSystem/Database/logindb.db");
+    mydb.setDatabaseName("D:/dev/Others/RailwayManagementSystem/Database/logindb.db");
     if (!mydb.open())
         ui->label_demo->setText("Failed !");
     // else
