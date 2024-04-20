@@ -96,3 +96,9 @@ void MainWindow::on_cancel_clicked()
     close();
 }
 
+
+void MainWindow::on_signUp_clicked()
+{
+    // code
+}
+
