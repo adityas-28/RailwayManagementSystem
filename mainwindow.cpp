@@ -72,7 +72,7 @@ void MainWindow::on_enter_clicked()
             this->hide();
             QMessageBox::StandardButton reply = QMessageBox::question(this, "Title1", "Are you sure you want to login ?",QMessageBox::Yes | QMessageBox::No);
             if(reply == QMessageBox::No){
-                QApplication::quit();
+               // QApplication::quit();
                 //   ui->setupUi(this);
                 MainWindow *mainWindow = new MainWindow();
                 mainWindow->show();
