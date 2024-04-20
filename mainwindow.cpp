@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "dialog.h"
+#include "signup.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -99,6 +100,10 @@ void MainWindow::on_cancel_clicked()
 
 void MainWindow::on_signUp_clicked()
 {
-    // code
+    this->hide();
+
+    SignUp xmenu;
+    xmenu.setModal(true);
+    xmenu.exec();
 }
 

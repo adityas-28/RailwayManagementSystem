@@ -25,6 +25,8 @@ private slots:
 
     void on_cancel_clicked();
 
+    void on_signUp_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mydb;

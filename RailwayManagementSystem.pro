@@ -12,18 +12,21 @@ SOURCES += \
     dialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    signup.cpp \
     trainbookingmenu.cpp \
     traincancelmenu.cpp
 
 HEADERS += \
     dialog.h \
     mainwindow.h \
+    signup.h \
     trainbookingmenu.h \
     traincancelmenu.h
 
 FORMS += \
     dialog.ui \
     mainwindow.ui \
+    signup.ui \
     trainbookingmenu.ui \
     traincancelmenu.ui
 
