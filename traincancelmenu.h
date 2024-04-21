@@ -18,6 +18,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_CancelButton_clicked();
+
+    void on_GoBackButton_clicked();
+
 private:
     Ui::trainCancelMenu *ui;
 };

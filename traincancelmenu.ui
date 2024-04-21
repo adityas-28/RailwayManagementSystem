@@ -6,20 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
-    <height>554</height>
+    <width>845</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="cm_label">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-30</y>
+     <width>841</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>90</x>
      <y>170</y>
-     <width>211</width>
-     <height>41</height>
+     <width>201</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
@@ -29,136 +42,45 @@
     </font>
    </property>
    <property name="text">
-    <string>Select Train Number :</string>
+    <string>       BOOKING ID :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>230</y>
-     <width>211</width>
+     <x>410</x>
+     <y>200</y>
+     <width>261</width>
      <height>41</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Select Seat :</string>
-   </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QPushButton" name="CancelButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>290</y>
-     <width>211</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Date :</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="dateEdit">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>290</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>230</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>170</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>130</y>
-     <width>551</width>
-     <height>261</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>410</y>
-     <width>131</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Enter</string>
-   </property>
-   <property name="default">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>50</y>
-     <width>371</width>
+     <x>100</x>
+     <y>430</y>
+     <width>141</width>
      <height>61</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>25</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
    <property name="text">
-    <string>Train Cancellation</string>
+    <string>Cancel Ticket </string>
    </property>
   </widget>
-  <zorder>graphicsView</zorder>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>lineEdit</zorder>
-  <zorder>spinBox</zorder>
-  <zorder>dateEdit</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>label_4</zorder>
+  <widget class="QPushButton" name="GoBackButton">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>430</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Go Back</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
