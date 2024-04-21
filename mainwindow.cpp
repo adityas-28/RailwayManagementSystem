@@ -100,7 +100,7 @@ void MainWindow::on_cancel_clicked()
 
 void MainWindow::on_signUp_clicked()
 {
-    this->hide();
+   this->hide();
 
     SignUp xmenu;
     xmenu.setModal(true);

@@ -2,6 +2,8 @@
 #include "ui_traincancelmenu.h"
 #include <QmessageBox>
 #include <QPixmap>
+#include <QtSql>
+
 
 trainCancelMenu::trainCancelMenu(QWidget *parent)
     : QDialog(parent)
@@ -10,7 +12,24 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
     ui->setupUi(this);
     QPixmap pix("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/cancelMenu_bg.jpg");
     ui->cm_label->setPixmap(pix.scaled(920,599,Qt::KeepAspectRatio));
+
+    QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
+    mydb.setDatabaseName("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/Database/canceldb.sqbpro");
+
+    if(mydb.open()){
+        ui->status->setText("Failed to open the Database");
+
+    }
+
+    else
+    {
+        ui->status->setText("Connected Successfully");
+
+    }
+
 }
+
+
 
 trainCancelMenu::~trainCancelMenu()
 {
