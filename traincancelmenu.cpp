@@ -11,10 +11,10 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
 {
     ui->setupUi(this);
     QPixmap pix("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/cancelMenu_bg.jpg");
-    ui->cm_label->setPixmap(pix.scaled(920,599,Qt::KeepAspectRatio));
+    ui->cm_label->setPixmap(pix.scaled(818,554,Qt::KeepAspectRatio));
 
     QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/Database/canceldb.sqbpro");
+    mydb.setDatabaseName("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/Database/loginDb.db");
 
     if(mydb.open()){
         ui->status->setText("Failed to open the Database");
