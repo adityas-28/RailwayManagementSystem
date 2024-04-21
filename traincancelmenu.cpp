@@ -22,13 +22,13 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
     mydb.setDatabaseName(dbPath);
 
     if(!mydb.open()){
+
         ui->status->setText("Failed to open the Database");
     }
 
     else
     {
         ui->status->setText("Connected Successfully");
-
     }
 
 }
