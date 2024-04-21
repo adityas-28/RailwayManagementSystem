@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     dialog.cpp \
+    history.cpp \
     main.cpp \
     mainwindow.cpp \
     signup.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     dialog.h \
+    history.h \
     mainwindow.h \
     signup.h \
     trainbookingmenu.h \
@@ -25,6 +27,7 @@ HEADERS += \
 
 FORMS += \
     dialog.ui \
+    history.ui \
     mainwindow.ui \
     signup.ui \
     trainbookingmenu.ui \

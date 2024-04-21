@@ -13,12 +13,16 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
     QPixmap pix("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/cancelMenu_bg.jpg");
     ui->cm_label->setPixmap(pix.scaled(818,554,Qt::KeepAspectRatio));
 
-    QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/Database/loginDb.db");
+    // QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
+    // mydb.setDatabaseName("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/Database/loginDb.db");
 
-    if(mydb.open()){
+
+    mydb = QSqlDatabase::addDatabase("QSQLITE");
+    QString dbPath = QDir::currentPath() + "/Database/logindb.db";
+    mydb.setDatabaseName(dbPath);
+
+    if(!mydb.open()){
         ui->status->setText("Failed to open the Database");
-
     }
 
     else

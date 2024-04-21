@@ -1,5 +1,6 @@
 #ifndef TRAINCANCELMENU_H
 #define TRAINCANCELMENU_H
+#include <QSqlDatabase>
 
 #include <QDialog>
 
@@ -24,6 +25,7 @@ private slots:
 
 private:
     Ui::trainCancelMenu *ui;
+    QSqlDatabase mydb;
 };
 
 #endif // TRAINCANCELMENU_H

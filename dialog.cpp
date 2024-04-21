@@ -5,6 +5,9 @@
 #include <QPixmap>
 #include "dialog.h"
 #include <QDebug>
+#include "history.h"
+#include "mainwindow.h"
+// #include "qdir.h"
 
 
 Dialog::Dialog(QWidget *parent)
@@ -12,8 +15,11 @@ Dialog::Dialog(QWidget *parent)
     , ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-    QPixmap pix1("C:/Users/Aditya Singh/Pictures/RMS_Qt/irctc_pic2.jpg");
-    ui->pic_main->setPixmap(pix1.scaled(750,500,Qt::IgnoreAspectRatio));
+    // QPixmap pix1(QDir::currentPath() + "/dialogWindow_bg.jpg");
+    QPixmap pix1("C:/SDF/RailwayManagementSystem/dialogWindow_bg.jpg");
+
+
+    ui->pic_main->setPixmap(pix1.scaled(801,571 ,Qt::IgnoreAspectRatio));
 }
 
 
@@ -36,5 +42,21 @@ void Dialog::on_trainCancellation_clicked()
     trainCancelMenu dmenu;
     dmenu.setModal(true);
     dmenu.exec();
+}
+
+
+void Dialog::on_trans_History_clicked()
+{
+    history emenu;
+    emenu.setModal(true);
+    emenu.exec();
+}
+
+
+void Dialog::on_pushButton_clicked()
+{
+    close();
+    MainWindow *loginWindow = new MainWindow();
+    loginWindow->show();
 }
 

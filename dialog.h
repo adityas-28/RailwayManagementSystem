@@ -20,6 +20,10 @@ private slots:
 
     void on_trainCancellation_clicked();
 
+    void on_trans_History_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::Dialog *ui;
 };

@@ -16,10 +16,10 @@
   <widget class="QLabel" name="pic_main">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>0</x>
      <y>0</y>
-     <width>701</width>
-     <height>411</height>
+     <width>801</width>
+     <height>571</height>
     </rect>
    </property>
    <property name="text">
@@ -29,20 +29,21 @@
   <widget class="QPushButton" name="trainBooking">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>450</y>
-     <width>171</width>
-     <height>81</height>
+     <x>40</x>
+     <y>80</y>
+     <width>371</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <pointsize>15</pointsize>
      <italic>true</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="autoFillBackground">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>Train Booking</string>
@@ -51,23 +52,27 @@
     <bool>true</bool>
    </property>
    <property name="flat">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="trainCancellation">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>450</y>
-     <width>171</width>
-     <height>81</height>
+     <x>40</x>
+     <y>190</y>
+     <width>371</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <pointsize>15</pointsize>
      <italic>true</italic>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>Train Cancellation</string>
@@ -75,18 +80,22 @@
    <property name="default">
     <bool>true</bool>
    </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="searchTrain">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>450</y>
-     <width>171</width>
-     <height>81</height>
+     <x>40</x>
+     <y>300</y>
+     <width>371</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <pointsize>15</pointsize>
      <italic>true</italic>
      <bold>true</bold>
      <underline>false</underline>
@@ -98,18 +107,22 @@
    <property name="default">
     <bool>true</bool>
    </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="trans_History">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>450</y>
-     <width>171</width>
+     <x>40</x>
+     <y>410</y>
+     <width>371</width>
      <height>81</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <pointsize>15</pointsize>
      <italic>true</italic>
      <bold>true</bold>
     </font>
@@ -117,8 +130,27 @@
    <property name="text">
     <string>Transaction History</string>
    </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
    <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>520</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LOG OUT</string>
    </property>
   </widget>
  </widget>
