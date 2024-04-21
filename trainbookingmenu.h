@@ -15,6 +15,9 @@ public:
     explicit trainBooking(QWidget *parent = nullptr);
     ~trainBooking();
 
+private slots:
+    void on_comboBox_currentTextChanged();
+
 private:
     Ui::trainBooking *ui;
 };
