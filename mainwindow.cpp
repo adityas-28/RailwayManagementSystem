@@ -80,6 +80,7 @@ void MainWindow::on_enter_clicked()
             }
             else{
                 //   qDebug() << "You clicked Yes";
+                this->hide();
                 Dialog dmenu;
                 dmenu.setModal(true);
                 dmenu.exec();

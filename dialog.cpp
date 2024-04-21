@@ -31,6 +31,7 @@ Dialog::~Dialog()
 
 void Dialog::on_trainBooking_clicked()
 {
+    close();
     trainBooking bmenu;
     bmenu.setModal(true);
     bmenu.exec();
@@ -39,6 +40,7 @@ void Dialog::on_trainBooking_clicked()
 
 void Dialog::on_trainCancellation_clicked()
 {
+    close();
     trainCancelMenu dmenu;
     dmenu.setModal(true);
     dmenu.exec();
@@ -47,6 +49,7 @@ void Dialog::on_trainCancellation_clicked()
 
 void Dialog::on_trans_History_clicked()
 {
+    close();
     history emenu;
     emenu.setModal(true);
     emenu.exec();

@@ -3,7 +3,7 @@
 #include <QmessageBox>
 #include <QPixmap>
 #include <QtSql>
-
+#include "dialog.h"
 
 trainCancelMenu::trainCancelMenu(QWidget *parent)
     : QDialog(parent)
@@ -68,5 +68,8 @@ void trainCancelMenu::on_CancelButton_clicked()
 void trainCancelMenu::on_GoBackButton_clicked()
 {
     close();
+    Dialog dmenu;
+    dmenu.setModal(true);
+    dmenu.exec();
 }
 

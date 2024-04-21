@@ -2,6 +2,7 @@
 #include "ui_history.h"
 #include <QDebug>
 #include <QPixmap>
+#include "dialog.h"
 
 
 history::history(QWidget *parent)
@@ -22,5 +23,8 @@ history::~history()
 void history::on_searchTrain_clicked()
 {
     close();
+    Dialog dmenu;
+    dmenu.setModal(true);
+    dmenu.exec();
 }
 
