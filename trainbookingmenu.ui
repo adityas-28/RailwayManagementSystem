@@ -85,31 +85,9 @@
      <bold>true</bold>
     </font>
    </property>
-   <item>
-    <property name="text">
-     <string>New Item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>New Item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>New Item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>New Item</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>New Item</string>
-    </property>
-   </item>
+   <property name="styleSheet">
+    <string notr="true">rgb</string>
+   </property>
   </widget>
   <widget class="QComboBox" name="comboBox_2">
    <property name="geometry">
@@ -125,6 +103,9 @@
      <pointsize>10</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">rgb</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -154,6 +135,9 @@
      <width>161</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">rgb</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -227,11 +211,11 @@
   <zorder>label_3</zorder>
   <zorder>label_2</zorder>
   <zorder>label_4</zorder>
-  <zorder>comboBox_1</zorder>
-  <zorder>comboBox_2</zorder>
   <zorder>dateEdit</zorder>
   <zorder>label_demo</zorder>
   <zorder>pushButton_2</zorder>
+  <zorder>comboBox_1</zorder>
+  <zorder>comboBox_2</zorder>
  </widget>
  <resources/>
  <connections/>

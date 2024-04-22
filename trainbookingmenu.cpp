@@ -38,16 +38,32 @@ void trainBooking::on_comboBox_currentTextChanged()
 {
     ui->comboBox_1->clear();
 
+/*    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT boarding FROM trainsInfo");
+    ui->comboBox_1->setModel(model);
+*/
+    /*
+QSqlQuery query;
+    query.exec(QString("SELECT boarding FROM trainsInfo"));
+if (query.next())
+{
+    QString loc1 = query.value(0).toString();
+    ui->comboBox_1->addItem(loc1);
+} else {
+    qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError().text();
+}
+*/
+
     QSqlQuery query("SELECT boarding FROM trainsInfo", mydb);
     if (!query.exec()) {
         qDebug() << "Error executing query:" << query.lastError().text();
         return;
     }
 
-    while (query.next()) {
-        QString cityName = query.value(0).toString();
-        ui->comboBox_1->addItem(cityName);
-    }
+   while (query.next()) {
+        QString loc1 = query.value(0).toString();
+        ui->comboBox_1->addItem(loc1);
+   }
 
     // query.first();
    // query.exec(QString("SELECT boarding FROM booking"));
@@ -74,16 +90,6 @@ void trainBooking::on_comboBox_currentTextChanged()
 // }
 
 
-// void trainBooking::on_comboBox_currentIndexChanged(int index)
-// {
-
-// }
-
-
-// void trainBooking::on_comboBox_currentTextChanged(const QString &arg1)
-// {
-
-// }
 
 }
 

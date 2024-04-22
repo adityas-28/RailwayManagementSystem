@@ -10,7 +10,7 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
     , ui(new Ui::trainCancelMenu)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem/cancelMenu_bg.jpg");
+    QPixmap pix("C:/SDF/RailwayManagementSystem/cancelMenu_bg.jpg");
     ui->cm_label->setPixmap(pix.scaled(818,554,Qt::KeepAspectRatio));
 
     // QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
