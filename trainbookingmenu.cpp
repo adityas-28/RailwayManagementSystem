@@ -2,8 +2,12 @@
 #include "ui_trainbookingmenu.h"
 #include "mainwindow.h"
 #include <QSqlQuery>
+#include <QDebug>
 #include <QSqlError>
+#include <train_options.h>
 #include "dialog.h"
+
+QString fromLocation, toLocation,trainclass;
 
 trainBooking::trainBooking(QWidget *parent)
     : QDialog(parent)
@@ -13,6 +17,7 @@ trainBooking::trainBooking(QWidget *parent)
     mydb = QSqlDatabase::addDatabase("QSQLITE");
 
     QString dbPath = QDir::currentPath() + "/Database/logindb.db";
+
     mydb.setDatabaseName(dbPath);
     if (!mydb.open())
         ui->label_demo->setText("Failed !");
@@ -101,3 +106,44 @@ void trainBooking::on_pushButton_2_clicked()
     dmenu.exec();
 
 }
+
+void trainBooking::on_pushButton_clicked()
+{
+    QSqlQuery q1;
+    q1.prepare("INSERT INTO Bookings (username, bookingId) VALUES (:v1, :v2)");
+    q1.bindValue(":v1", fromLocation);
+    q1.bindValue(":v2", toLocation);
+
+    if (!q1.exec()) {
+        qDebug() << "Error executing query:" << q1.lastError().text();
+        qDebug() << "Query:" << q1.lastQuery();
+    } else {
+        qDebug() << "Data inserted successfully!";
+        Train_options train_op;
+        train_op.setModal(true);
+        train_op.exec();
+    }
+}
+
+
+
+
+void trainBooking::on_comboBox_1_currentTextChanged(const QString &arg1)
+{
+    fromLocation = arg1;
+}
+
+
+void trainBooking::on_comboBox_2_currentTextChanged(const QString &arg1)
+{
+    toLocation=arg1;
+}
+
+
+void trainBooking::on_textEdit_textChanged()
+{
+    QTextEdit textEdit;
+    trainclass=textEdit.toPlainText();
+    qDebug()<<trainclass;
+}
+

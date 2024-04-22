@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     signup.cpp \
+    train_options.cpp \
     trainbookingmenu.cpp \
     traincancelmenu.cpp
 
@@ -22,6 +23,7 @@ HEADERS += \
     history.h \
     mainwindow.h \
     signup.h \
+    train_options.h \
     trainbookingmenu.h \
     traincancelmenu.h
 
@@ -30,6 +32,7 @@ FORMS += \
     history.ui \
     mainwindow.ui \
     signup.ui \
+    train_options.ui \
     trainbookingmenu.ui \
     traincancelmenu.ui
 

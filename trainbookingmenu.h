@@ -26,6 +26,14 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_comboBox_1_currentTextChanged(const QString &arg1);
+
+    void on_comboBox_2_currentTextChanged(const QString &arg1);
+
+    void on_textEdit_textChanged();
+
 private:
     Ui::trainBooking *ui;
     QSqlDatabase mydb;
