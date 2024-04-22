@@ -23,6 +23,8 @@ private slots:
 
     void on_GoBackButton_clicked();
 
+    void on_ChooseButton_currentTextChanged(const QString &arg1);
+
 private:
     Ui::trainCancelMenu *ui;
     QSqlDatabase mydb;
