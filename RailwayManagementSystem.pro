@@ -16,7 +16,8 @@ SOURCES += \
     signup.cpp \
     train_options.cpp \
     trainbookingmenu.cpp \
-    traincancelmenu.cpp
+    traincancelmenu.cpp \
+    trainsearchmenu.cpp
 
 HEADERS += \
     dialog.h \
@@ -25,7 +26,8 @@ HEADERS += \
     signup.h \
     train_options.h \
     trainbookingmenu.h \
-    traincancelmenu.h
+    traincancelmenu.h \
+    trainsearchmenu.h
 
 FORMS += \
     dialog.ui \
@@ -34,7 +36,8 @@ FORMS += \
     signup.ui \
     train_options.ui \
     trainbookingmenu.ui \
-    traincancelmenu.ui
+    traincancelmenu.ui \
+    trainsearchmenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

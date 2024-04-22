@@ -7,7 +7,10 @@
 #include <train_options.h>
 #include "dialog.h"
 #include <QDebug>
+#include<QString>
 #include <string>
+#include <QMessageBox>
+#include <QPixmap>
 
 QString fromLocation, toLocation,trainclass;
 
@@ -16,6 +19,10 @@ trainBooking::trainBooking(QWidget *parent)
     , ui(new Ui::trainBooking)
 {
     ui->setupUi(this);
+
+    QPixmap pix("C:/SDF/RailwayManagementSystem/TrainBookingMenu_bg.jpg");
+    ui->label_pic->setPixmap(pix.scaled(741,571,Qt::IgnoreAspectRatio));
+
     mydb = QSqlDatabase::addDatabase("QSQLITE");
 
     QString dbPath = QDir::currentPath() + "/Database/logindb.db";
@@ -146,36 +153,62 @@ void trainBooking::on_pushButton_clicked()
     QString usernames;
     usernames = ui->username->toPlainText();
 
-    QSqlQuery query;
-    query.prepare("SELECT * from Bookings");
+    QString classe;
+    classe = ui->class_2->toPlainText();
 
-    int count = 0;
-    while(query.next()){
-        count++;
-        qDebug() << count;
+    QSqlQuery query;
+    query.prepare("SELECT * FROM Bookings");
+
+    if (!query.exec()) {
+        qDebug() << "Error executing query:" << query.lastError().text();
+        return;
     }
 
+    int count = 1;
+    while (query.next()) {
+        count++;
+    }
 
-    std::string a = "a00";
-    a = a+std::to_string(count);
-    qDebug()<<a;
+    qDebug() << "Total number of rows in Bookings table:" << count;
+
+    std::string a = "a00tx";
+    a = a + std::to_string(count);
+    qDebug() << a.c_str();
+
 
 
 
 
     QSqlQuery q1;
-    q1.prepare("INSERT INTO Bookings (username, Sno) VALUES (:v1, :v2)");
+    q1.prepare("INSERT INTO Bookings (username, bookingId, Sno, source, destination, class) VALUES (:v1, :v2, :v3, :v4, :v5, :v6)");
     q1.bindValue(":v1", usernames);
-    q1.bindValue(":v2", count);
+    q1.bindValue(":v2", a.c_str());
+    q1.bindValue(":v3", count);
+    q1.bindValue(":v4", fromLocation);
+    q1.bindValue(":v5", toLocation);
+    q1.bindValue(":v6", classe);
 
     if (!q1.exec()) {
         qDebug() << "Error executing query:" << q1.lastError().text();
         qDebug() << "Query:" << q1.lastQuery();
     } else {
         qDebug() << "Data inserted successfully!";
-        Train_options train_op;
-        train_op.setModal(true);
-        train_op.exec();
+
+        // QMessageBox::information(this, "Success", "Your Booikng is Successfully !\nBooking ID : %1\n").arg;
+        QMessageBox::information(this,
+                                 "Booking Successful",
+                                 QString("Your Booking is Successful!\nBooking ID : %1").arg(a.c_str()));
+
+
+        close();
+        Dialog dmenu;
+        dmenu.setModal(true);
+        dmenu.exec();
+
+
+        // Train_options train_op;
+        // train_op.setModal(true);
+        // train_op.exec();
     }
 }
 

@@ -7,6 +7,7 @@
 #include <QDebug>
 #include "history.h"
 #include "mainwindow.h"
+#include "trainsearchmenu.h"
 // #include "qdir.h"
 
 
@@ -61,5 +62,14 @@ void Dialog::on_pushButton_clicked()
     close();
     MainWindow *loginWindow = new MainWindow();
     loginWindow->show();
+}
+
+
+void Dialog::on_searchTrain_clicked()
+{
+    close();
+    trainSearchMenu qmenu;
+    qmenu.setModal(true);
+    qmenu.exec();
 }
 

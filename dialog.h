@@ -24,6 +24,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_searchTrain_clicked();
+
 private:
     Ui::Dialog *ui;
 };

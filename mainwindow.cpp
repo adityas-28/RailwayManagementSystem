@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     //     ui->label_demo->setText("Connected !");
 
     // QPixmap pix("C:/Users/Aditya Singh/Pictures/RMS_Qt/irctc_pic.jpg");
-    // ui->pic_label->setPixmap(pix.scaled(200,200,Qt::KeepAspectRatio));f
+    // ui->pic_label->setPixmap(pix.scaled(200,200,Qt::KeepAspectRatio));
 }
 
 
