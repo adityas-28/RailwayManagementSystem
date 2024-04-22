@@ -10,7 +10,7 @@ trainCancelMenu::trainCancelMenu(QWidget *parent)
     , ui(new Ui::trainCancelMenu)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/SDF/RailwayManagementSystem/cancelMenu_bg.jpg");
+    QPixmap pix("C:/Users/Admin/Documents/GitHub/RailwayManagementSystem2/Cancel_Menu.jpeg");
     ui->cm_label->setPixmap(pix.scaled(818,554,Qt::KeepAspectRatio));
 
     // QSqlDatabase  mydb=QSqlDatabase::addDatabase("QSQLITE");
@@ -71,5 +71,11 @@ void trainCancelMenu::on_GoBackButton_clicked()
     Dialog dmenu;
     dmenu.setModal(true);
     dmenu.exec();
+}
+
+
+void trainCancelMenu::on_ChooseButton_currentTextChanged(const QString &arg1)
+{
+
 }
 
