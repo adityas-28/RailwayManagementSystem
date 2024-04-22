@@ -301,7 +301,7 @@
     <string>Username</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="username">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -328,7 +328,7 @@
   <zorder>label_5</zorder>
   <zorder>textEdit</zorder>
   <zorder>label_6</zorder>
-  <zorder>textEdit_2</zorder>
+  <zorder>username</zorder>
  </widget>
  <resources/>
  <connections/>

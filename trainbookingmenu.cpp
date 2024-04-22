@@ -7,6 +7,7 @@
 #include <train_options.h>
 #include "dialog.h"
 #include <QDebug>
+#include <string>
 
 QString fromLocation, toLocation,trainclass;
 
@@ -62,6 +63,16 @@ trainBooking::trainBooking(QWidget *parent)
         ui->comboBox_2->addItem(loc2);
 
         // QString comboBox_1 = ;
+    }
+
+
+    QSqlQuery query3;
+    query3.prepare("SELECT * from Bookings");
+
+    int count = 0;
+    while(query3.next()){
+        count++;
+        qDebug() << "\n\n\n" << count << "\n";
     }
 }
 
@@ -131,10 +142,31 @@ void trainBooking::on_pushButton_2_clicked()
 
 void trainBooking::on_pushButton_clicked()
 {
+
+    QString usernames;
+    usernames = ui->username->toPlainText();
+
+    QSqlQuery query;
+    query.prepare("SELECT * from Bookings");
+
+    int count = 0;
+    while(query.next()){
+        count++;
+        qDebug() << count;
+    }
+
+
+    std::string a = "a00";
+    a = a+std::to_string(count);
+    qDebug()<<a;
+
+
+
+
     QSqlQuery q1;
-    q1.prepare("INSERT INTO Bookings (username, bookingId) VALUES (:v1, :v2)");
-    q1.bindValue(":v1", fromLocation);
-    q1.bindValue(":v2", toLocation);
+    q1.prepare("INSERT INTO Bookings (username, Sno) VALUES (:v1, :v2)");
+    q1.bindValue(":v1", usernames);
+    q1.bindValue(":v2", count);
 
     if (!q1.exec()) {
         qDebug() << "Error executing query:" << q1.lastError().text();
@@ -146,7 +178,6 @@ void trainBooking::on_pushButton_clicked()
         train_op.exec();
     }
 }
-
 
 
 
@@ -166,6 +197,6 @@ void trainBooking::on_textEdit_textChanged()
 {
     QTextEdit textEdit;
     trainclass=textEdit.toPlainText();
-    qDebug()<<trainclass;
+    qDebug() << trainclass;
 }
 

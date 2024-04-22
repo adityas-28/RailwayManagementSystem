@@ -33,6 +33,7 @@ private slots:
     void on_comboBox_2_currentTextChanged(const QString &arg1);
 
     void on_textEdit_textChanged();
+    // int count = 0;
 
 private:
     Ui::trainBooking *ui;
