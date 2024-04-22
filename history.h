@@ -18,6 +18,8 @@ public:
 private slots:
     void on_searchTrain_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::history *ui;
 };
