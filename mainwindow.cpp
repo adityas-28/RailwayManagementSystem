@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    // qDebug()<<"hello !";
     mydb = QSqlDatabase::addDatabase("QSQLITE");
 
     QString dbPath = QDir::currentPath() + "/Database/logindb.db";

@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include "dialog.h"
+#include <QDebug>
 
 trainBooking::trainBooking(QWidget *parent)
     : QDialog(parent)
@@ -16,8 +17,8 @@ trainBooking::trainBooking(QWidget *parent)
     mydb.setDatabaseName(dbPath);
     if (!mydb.open())
         ui->label_demo->setText("Failed !");
-    else
-        ui->label_demo->setText("Connected !");
+    // else
+    //     ui->label_demo->setText("Connected !");
 
     // QSqlQuery query;
     // query.prepare("SELECT boarding FROM trainsInfo");
@@ -27,6 +28,36 @@ trainBooking::trainBooking(QWidget *parent)
     // for(int i = 0; i < 5; i++){
     // ui->comboBox_1->addItem(query.next());
     // }
+
+    ui->comboBox_1->clear();
+    ui->comboBox_2->clear();
+
+    QSqlQuery query, query2;
+    query.prepare("SELECT Boarding FROM trainsInfo");
+    if (!query.exec()) {
+        qDebug() << "Error executing query:" << query.lastError().text();
+        return;
+    }
+
+    while (query.next()) {
+        //qDebug()<<query.value(0).toString();
+        QString loc1 = query.value(0).toString();
+        ui->comboBox_1->addItem(loc1);
+    }
+
+    query.prepare("SELECT Destination FROM trainsInfo");
+    if (!query.exec()) {
+        qDebug() << "Error executing query:" << query.lastError().text();
+        return;
+    }
+
+    while (query.next()) {
+        // qDebug()<<query.value(0).toString();
+        QString loc2 = query.value(0).toString();
+        ui->comboBox_2->addItem(loc2);
+
+        // QString comboBox_1 = ;
+    }
 }
 
 trainBooking::~trainBooking()
@@ -54,16 +85,7 @@ if (query.next())
 }
 */
 
-    QSqlQuery query("SELECT boarding FROM trainsInfo", mydb);
-    if (!query.exec()) {
-        qDebug() << "Error executing query:" << query.lastError().text();
-        return;
-    }
 
-   while (query.next()) {
-        QString loc1 = query.value(0).toString();
-        ui->comboBox_1->addItem(loc1);
-   }
 
     // query.first();
    // query.exec(QString("SELECT boarding FROM booking"));
