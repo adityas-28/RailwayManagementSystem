@@ -7,7 +7,7 @@
 #include <train_options.h>
 #include "dialog.h"
 #include <QDebug>
-#include<QString>
+#include <QString>
 #include <string>
 #include <QMessageBox>
 #include <QPixmap>

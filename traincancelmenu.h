@@ -1,6 +1,7 @@
 #ifndef TRAINCANCELMENU_H
 #define TRAINCANCELMENU_H
 #include <QSqlDatabase>
+#include <QDebug>
 
 #include <QDialog>
 

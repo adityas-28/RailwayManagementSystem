@@ -19,8 +19,8 @@ trainSearchMenu::trainSearchMenu(QWidget *parent)
     mydb.setDatabaseName(dbPath);
     if (!mydb.open())
         ui->label_demo->setText("Failed !");
-    else
-        ui->label_demo->setText("Connected !");
+    // else
+    //     ui->label_demo->setText("Connected !");
 }
 
 trainSearchMenu::~trainSearchMenu()
